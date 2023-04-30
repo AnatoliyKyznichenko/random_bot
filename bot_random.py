@@ -16,6 +16,7 @@ app = Client('my_bot', Api_id, Api_hash)
 # обработчик команды /get_users
 @app.on_message(filters.command('get_users'))
 async def get_users_command_handler(client, message):
+    print('l')
     # получаем список всех пользователей в группе
     memebers = []
     group_id = message.chat.id
@@ -34,10 +35,10 @@ async def get_users_command_handler(client, message):
 
     # отправляем список пользователей обратно в чат
     if users:
-        await message.reply(f'Победитель, {random.choice(users)}')
+        await message.reply(f'Переможець - {random.choice(users)}! 🥳🍾🎁')
     else:
         await message.reply('Пользователей нет')
 
-
+###
 if __name__ == '__main__':
     app.run()
