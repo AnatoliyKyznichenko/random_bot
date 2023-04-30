@@ -35,9 +35,9 @@ async def get_users_command_handler(client, message):
 
     # отправляем список пользователей обратно в чат
     if users:
-        await message.reply(f'Переможець - {random.choice(users)}! 🥳🍾🎁')
+        await client.send_message(chat_id=message.chat.id, text=f'Переможець - {random.choice(users)}! 🥳🍾🎁')
     else:
-        await message.reply('Пользователей нет')
+        await client.send_message(chat_id=message.chat.id, text='Пользователей нет')
 
 ###
 if __name__ == '__main__':
